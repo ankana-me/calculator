@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="CodeArry.css">
+</head>
+
+<body>
+
+    <!-- Calculater starts from here -->
+    <main class="container">
+        <section class="screen">
+            <p class="calculate"></p>
+            <p class="result"></p>
+        </section>
+
+
+        <section class="button-box">
+            <button onclick="tapClear()" class="letter-btn operator-btn">
+                AC
+            </button>
+            <button onclick="tapOperator('%')" class="operator-btn">
+                %
+            </button>
+            <button onClick="tapDel()" class="letter-btn operator-btn">
+                DEL
+            </button>
+            <button onClick="tapOperator('/')" class="operator-btn">
+                &divide;
+            </button>
+            <button onClick="tapNum('9')">
+                9
+            </button>
+            <button onClick="tapNum('8')">
+                8
+            </button>
+            <button onClick="tapNum('7')">
+                7
+            </button>
+            <button onClick="tapOperator('*')" class="operator-btn">
+                &times;
+            </button>
+            <button onClick="tapNum('4')">
+                4
+            </button>
+            <button onClick="tapNum('5')">
+                5
+            </button>
+            <button onClick="tapNum('6')">
+                6
+            </button>
+            <button onClick="tapOperator('-')" class="operator-btn">
+                -
+            </button>
+            <button onClick="tapNum('1')">
+                1
+            </button>
+            <button onClick="tapNum('2')">
+                2
+            </button>
+            <button onClick="tapNum('3')">
+                3
+            </button>
+            <button onClick="tapOperator('+')" class="operator-btn">
+                +
+            </button>
+            <button onClick="tapNum('0')" class="nol-btn">
+                0
+            </button>
+            <button onClick="tapNum('.')">
+                .
+            </button>
+            <button onClick="tapResult()" class="result-btn">
+                =
+            </button>
+        </section>
+    </main>
+
+
+
+
+    <script src="CodeArry.js"></script>
+</body>
+
+</html>
