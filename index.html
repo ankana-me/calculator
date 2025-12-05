@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator App</title>
+    <title>Calculator with Dark/Light Mode</title>
     <link rel="stylesheet" href="style.css">
+    <!-- You can add Poppins font if you want -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
-<body>
+<body data-theme="light">
 
     <!-- Calculater starts from here -->
     <main class="container">
+
+        <!-- Theme Toggle Switch (Sun/Moon) -->
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="theme-checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
         <section class="screen">
             <p class="calculate"></p>
             <p class="result"></p>
         </section>
-
 
         <section class="button-box">
             <button onclick="tapClear()" class="letter-btn operator-btn">
@@ -29,7 +37,7 @@
                 DEL
             </button>
             <button onClick="tapOperator('/')" class="operator-btn">
-                &divide;
+                ÷
             </button>
             <button onClick="tapNum('9')">
                 9
@@ -41,7 +49,7 @@
                 7
             </button>
             <button onClick="tapOperator('*')" class="operator-btn">
-                &times;
+                ×
             </button>
             <button onClick="tapNum('4')">
                 4
@@ -79,12 +87,29 @@
         </section>
     </main>
 
-
-
-
     <script src="script.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const toggle = document.getElementById('theme-checkbox');
+        const body = document.body;
+
+        // Load saved theme on page load
+        if (localStorage.getItem('theme') === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            toggle.checked = true;
+        }
+
+        // Toggle theme when switch is clicked
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
-
-
 </html>
-
